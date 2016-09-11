@@ -5,19 +5,40 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Your Website</title>
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/underscore/underscore.js"></script>
-	<script src="node_modules/backbone/backbone.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/collections.js"></script>
-	<script src="js/views.js"></script>
+	
+	<!--<script src="js/collections.js"></script>-->
+	
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
+<style>
+	.song{list-style: none; }
+</style>
 
 <body>
-	<div id="container"></div>
+	<ul id="onesong"></ul>
+	<ul id="songContainer"></ul>
 </body>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/backbone/backbone.js"></script>
+<!--<script src="js/app.js"></script>-->
+<!--<script src="js/views.js"></script>-->
+<!--<script src="js/collection_events.js"></script>-->
+<!--<script src="js/templating.js"></script>-->
 
+<script id="songTemplate" type="text/html">
+	<%= title %>
+	<button>Listen</button>
+	<% if (plays>1000) {%>
+		<span class="popular"> Popular</span>
+	<% }%>	
+</script>
+
+<script id="vehicleTemplate" type="text/html">
+	<%= registration_number%>
+	<button class="delete">Delete</button>
+</script>
+<script src="js/views_test.js"></script>
 </html>
